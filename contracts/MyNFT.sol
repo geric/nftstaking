@@ -6,8 +6,8 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract MyNFT is ERC1155, Ownable {
     uint256 maxSupply;
-    uint256 nftIdCounter;
-    address treasuryAddress;
+    uint256 public nftIdCounter;
+    address public treasuryAddress;
 
     mapping (uint256 => string) private _uris;
 
