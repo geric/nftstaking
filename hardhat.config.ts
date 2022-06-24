@@ -29,9 +29,13 @@ const config: HardhatUserConfig = {
             gasPrice: 20000000000,
             accounts: [`0x${secrets.BSC_MAINNET_DEPLOYER_PPK}`],
         },
+        rinkeby: {
+            url: 'https://rinkeby.infura.io/v3/fe8337e0438340c5b5eb9d22addcbcc9',
+            accounts: [`0x${secrets.ETH_RINKEBY_DEVELOPER_PPK}`],
+        }
     },
     etherscan: {
-        apiKey: secrets.BSC_SCAN_API_KEY,
+        apiKey: secrets.ETH_SCAN_API_KEY,
     },
 }
 

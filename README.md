@@ -22,3 +22,38 @@ string uri
 6. User should only be allowed to unstake the NFT after the lock-in period
 7. ETH rewards accumulation should stop after the user unstaked the NFT
 8. User should be able to claim the rewards only after unstaking the NFT
+
+### Other requirements:
+1. Create a repo in GitHub
+2. Use hardhat
+3. Verify the contract in rinkeby using hardhat
+4. Basic unit tests
+
+### Deployment
+```bash
+# MyNFT (max of 1 supply)
+npx hardhat run --network rinkeby scripts/deploy-mynft.ts
+npx hardhat verify --network rinkeby "0x6feaD04d94724548b938b143b5877682Ba4aAE66" "1"
+
+# MyNFT (max of 100 supply)
+npx hardhat run --network rinkeby scripts/deploy-mynft-100.ts
+npx hardhat verify --network rinkeby "0xA049eAeE34DD4B64e3635E3758d30FAd454b223D" "100"
+
+# NFTStaking
+npx hardhat run --network rinkeby scripts/deploy-nftstaking.ts
+npx hardhat verify --network rinkeby "0x662097F6257baB70207759e89Ed64639B40E22cD" "0xA049eAeE34DD4B64e3635E3758d30FAd454b223D"
+```
+
+### Deployed contract:
+1. MyNFT 
+    0x6feaD04d94724548b938b143b5877682Ba4aAE66
+    https://rinkeby.etherscan.io/address/0x6feaD04d94724548b938b143b5877682Ba4aAE66#code
+
+2. NFTStaking
+   
+   I've reused the MyNFT contract and redeployed to to set the max supply to 100 
+   https://rinkeby.etherscan.io/address/0xA049eAeE34DD4B64e3635E3758d30FAd454b223D#code
+
+   0x662097F6257baB70207759e89Ed64639B40E22cD
+   https://rinkeby.etherscan.io/address/0x662097F6257baB70207759e89Ed64639B40E22cD#code
+
