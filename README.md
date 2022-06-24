@@ -29,6 +29,13 @@ string uri
 3. Verify the contract in rinkeby using hardhat
 4. Basic unit tests
 
+### Running the project
+```bash
+yarn install
+npx hardhat compile
+npx hardhat test
+```
+
 ### Deployment
 ```bash
 # MyNFT (max of 1 supply)
